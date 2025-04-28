@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>Decodificador</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="cabecalho__texto">
+            <h1>Criptografa</h1>
+        </div>
+            <form class="cabecalho__menu">
+                <div class="cabecalho__menu__cod1">
+                        <div>
+                            <input type="radio" name="codigo" id="cesar" value="cesar" checked>
+                            <label for="cesar">Cifra de Cesar</label>
+                        </div>
+                        
+                        <label for="deslocamento">Deslocamento: <span id="valorRange">1</span></label>
+                        <input type="range" min="1" max="25" step="1" value="1" name="deslocamento" id="deslocamento"  oninput="atualizarValor(this.value)">
+                </div>
+                <div class="cabecalho__menu__cod2">
+                    <input type="radio" name="codigo" id="vogal" value="vogal">
+                    <label for="vogal">Código das Vogais</label>
+                </div>
+            </form>
+    </header>
+    <main class="container">
+        <section class="container__decodificacao">
+            <label for="texto" class="container__decodificacao__texto">
+                <textarea name="texto" id="texto" placeholder="Digite o texto aqui..."></textarea>
+                <p>! Apenas letras sem acento, para um melhor resultado.</p>
+            </label>
+            <div class="container__decodificacao__botoes">
+                <button class="estilo_botao" type="submit" onclick="criptografar()">Criptografar</button>
+                <button class="estilo_botao" type="submit" onclick="descriptografar()">Descriptografar</button>
+            </div>
+        </section>
+        <section class="container__resultado">
+            <div id="resultado" class="container__resultado__texto">
+                <div class="container__resultado__texto__inicio">
+                    <img src="assets/manage_search_purple.png" alt="icone de uma lupa">
+                    <p>Nenhuma mensagem encontrada</p>
+                </div>
+            </div>
+            <button class="container__resultado__btn estilo_botao ocultar" type="submit" onclick="copiar()">Copiar</button>
+        </section>
+    </main>
+    <footer>
+        <p>Curso Técnico em Desenvolvimento de Sistemas</p>
+        <p>2025</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
